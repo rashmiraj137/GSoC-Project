@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+## GSoC Final Report
+### Implement JAX based automatic differentiation to Stingray
 
-You can use the [editor on GitHub](https://github.com/rashmiraj137/GSoC-Project/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+The project involved study of the modern statistical modeling to augment the accuracy, speed, and robustness of the likelihood function, into a software package called Stingray. This report demonstrates the experiment done for a combination of different optimizers to fit the scipy.optimize function. Another emphasis is to investigate the gradient calculation using JAX and compare it with scipy.optimize. 
+The proposed milestone was to investigate the room for improvement to enhance the overall performance of modeling to Stingray, using JAX. However, the current stage of model is still a sandbox model. Stingray is astrophysical spectral timing software, a library in python built to perform time series analysis and related tasks on astronomical light curves. JAX is a python library designed for high-performance numerical computing. Its API for numerical functions is based on NumPy, a collection of functions used in scientific computing. Both Python and NumPy are widely used and familiar, making JAX simple, flexible, and easy to adopt. It can differentiate through a large subset of python’s features, including loops, ifs, recursion, and closures, and it can even take derivatives of derivatives. Such modern differentiation packages deploy a broad range of computational techniques to improve the applicability, run time, and memory management.
+JAX utilizes the grad function transformation to convert a function into a function that returns the original function’s gradient, just like Autograd. Beyond that, JAX offers a function transformation jit for just-in-time compilation of existing functions and vmap and pmap for vectorization and parallelization, respectively.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Experiment:
 
-### Markdown
+The powerlaw and lorentzian function are the most used to describe periodograms in astronomy. In practice, we use the sum of these components to design a realistic model. For the analysis here we consider a quasi-periodic oscillation and a constant and try to fail the algorithm by, (i) reduce the amplitude, (ii) start the optimization process with parameters very far away from the true parameters, (iii) try different optimizers to experiment on different sensitive aspect of the current likelihood calculation. The current ongoing milestone is to try alternatives of scipy.optimize but this requires series of tests for the same. 
+The above tests can be visualized in the notebook added on Github: https://github.com/rashmiraj137/GSoC-Project
+During the experiment, it was observed that the algorithm is sensitive to 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Repositories:
+https://github.com/StingraySoftware/stingray
+https://github.com/StingraySoftware/notebooks
+BlogPost:
 
-```markdown
-Syntax highlighted code block
+## Profiles:
+GitHub: https://github.com/rashmiraj137
+LinkedIn: https://www.linkedin.com/in/rashmi-raj-4b8a2b106/ 
+Medium: https://medium.com/@rashmi_13737
+![image](https://user-images.githubusercontent.com/42755704/130421857-ec70a240-0707-4227-884b-57594628a462.png)
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rashmiraj137/GSoC-Project/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.

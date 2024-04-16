@@ -9,7 +9,20 @@ JAX utilizes the grad function transformation to convert a function into a funct
 
 The powerlaw and lorentzian function are the most used to describe periodograms in astronomy. In practice, we use the sum of these components to design a realistic model. For the analysis here we consider a quasi-periodic oscillation and a constant and try to fail the algorithm by, (i) reduce the amplitude, (ii) start the optimization process with parameters very far away from the true parameters, (iii) try different optimizers to experiment on different sensitive aspect of the current likelihood calculation. The current ongoing milestone is to try alternatives of scipy.optimize but this requires series of tests for the same. 
 The above tests can be visualized in the notebook added on Github: https://github.com/rashmiraj137/GSoC-Project
-During the experiment, it was observed that the algorithm is sensitive to 
+
+## Impact:
+
+JAX-based automatic differentiation offers following advantages over traditional methods:
+
+*Efficiency*: JAX utilizes just-in-time (JIT) compilation and hardware acceleration to compute gradients efficiently, leading to faster training and inference times compared to manual differentiation.
+
+*Flexibility*: JAX allows for dynamic computation graphs, enabling more flexible and complex models to be built and trained, which may be challenging with static computational graphs used in traditional differentiation methods.
+
+*Numerical Stability*: JAX employs advanced numerical techniques to ensure stability during gradient computation, reducing the likelihood of numerical errors such as vanishing or exploding gradients.
+
+*Compatibility*: JAX seamlessly integrates with other libraries like NumPy and TensorFlow, allowing for easy interoperability and leveraging existing codebases.
+
+*Parallelism*: JAX can automatically parallelize operations across multiple devices or processors, maximizing resource utilization and speeding up computation for large-scale datasets or models.
 
 ## Repositories:
 https://github.com/StingraySoftware/stingray

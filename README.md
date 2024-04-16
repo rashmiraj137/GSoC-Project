@@ -27,7 +27,6 @@ JAX-based automatic differentiation offers following advantages over traditional
 ## Repositories:
 https://github.com/StingraySoftware/stingray
 https://github.com/StingraySoftware/notebooks
-BlogPost:
 
 ## Profiles:
 GitHub: https://github.com/rashmiraj137
